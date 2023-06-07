@@ -51,6 +51,20 @@
       white-space: pre-wrap;
     }
   </style>
+  <script>
+    function redirectToHTML() {
+      // Clear text files
+      clearTextFile('command_output.txt');
+      clearTextFile('select_type_atom.txt');
+
+      // Redirect to HTML file
+      //window.location.href = "../main_html.html";
+    }
+
+    function clearTextFile(filename) {
+      fetch('php/clear_text_file.php?file=' + filename);
+    }
+  </script>
 </head>
 <body>
   <div class="form-container">
@@ -66,7 +80,7 @@
       <label for="atom2">Enter acceptor of atom:</label>
       <input type="text" name="atom2" id="atom2">
     
-      <input type="submit" value="Upload">
+      <input type="submit" onclick="redirectToHTML()" value="Upload">
     </form>
   </div>
 
