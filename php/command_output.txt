@@ -1,0 +1,117 @@
+ ETCouplMod::Clear()
+ 1 atom selected!
+1 atom selected!
+HarlemApp::ProcessOptions()HarlemApp::ProcessOptions()
+Error: File  RBP130.RU not found!
+ HarlemAppWX::OnInit()  Error loading file RBP130.RU
+
+HARLEM (HAmiltonians to Research LargE Molecules)
+==============================================================================
+
+ Initialize Residue Database
+ Add residue template file res_ADE_cg.hlm  in the Residue Database directory
+ Add residue template file res_adx.HLM  in the Residue Database directory
+ Add residue template file res_ala_mod.hlm  in the Residue Database directory
+ Add residue template file res_amgrp.hlm  in the Residue Database directory
+ Add residue template file res_amino.hlm  in the Residue Database directory
+ Add residue template file res_amino.xml  in the Residue Database directory
+ Add residue template file res_amino_ct.hlm  in the Residue Database directory
+ Add residue template file res_amino_nt.hlm  in the Residue Database directory
+ Add residue template file res_asp_prot.hlm  in the Residue Database directory
+ Add residue template file res_asp_prot_to_unprot.hlm  in the Residue Database directory
+ Add residue template file res_atp.hlm  in the Residue Database directory
+ Add residue template file res_azurin.hlm  in the Residue Database directory
+ Add residue template file res_benz.hlm  in the Residue Database directory
+ Add residue template file res_boc.hlm  in the Residue Database directory
+ Add residue template file res_bpm.hlm  in the Residue Database directory
+ Add residue template file res_bpy.hlm  in the Residue Database directory
+ Add residue template file res_bpy_pr.hlm  in the Residue Database directory
+ Add residue template file res_btr_2.hlm  in the Residue Database directory
+ Add residue template file res_ca.hlm  in the Residue Database directory
+ Add residue template file res_carb.hlm  in the Residue Database directory
+ Add residue template file res_ca_dummy.hlm  in the Residue Database directory
+ Add residue template file res_ca_neutral.hlm  in the Residue Database directory
+ Add residue template file res_cbz.hlm  in the Residue Database directory
+ Add residue template file res_cofactor.hlm  in the Residue Database directory
+ Add residue template file res_cu.hlm  in the Residue Database directory
+ Add residue template file res_CYT_cg.hlm  in the Residue Database directory
+ Add residue template file res_dmf.hlm  in the Residue Database directory
+ Add residue template file res_dmp.hlm  in the Residue Database directory
+ Add residue template file res_dmp_berger.hlm  in the Residue Database directory
+ Add residue template file res_fbenz.hlm  in the Residue Database directory
+ Add residue template file res_fmd.hlm  in the Residue Database directory
+ Add residue template file res_fmm.hlm  in the Residue Database directory
+ Add residue template file res_GLF_free.hlm  in the Residue Database directory
+ Add residue template file res_GUA_cg.hlm  in the Residue Database directory
+ Add residue template file res_hembox.HLM  in the Residue Database directory
+ Add residue template file res_hemcmpi.HLM  in the Residue Database directory
+ Add residue template file res_hemcmpii.hlm  in the Residue Database directory
+ Add residue template file res_heme_b.hlm  in the Residue Database directory
+ Add residue template file res_heme_c.hlm  in the Residue Database directory
+ Add residue template file res_his_cu_l1.hlm  in the Residue Database directory
+ Add residue template file res_his_prot_to_hid.hlm  in the Residue Database directory
+ Add residue template file res_his_prot_to_hie.hlm  in the Residue Database directory
+ Add residue template file res_hrb1.HLM  in the Residue Database directory
+ Add residue template file res_imd.HLM  in the Residue Database directory
+ Add residue template file res_ions.hlm  in the Residue Database directory
+ Add residue template file res_leu_mod.hlm  in the Residue Database directory
+ Add residue template file res_methane.hlm  in the Residue Database directory
+ Add residue template file res_methyl.hlm  in the Residue Database directory
+ Add residue template file res_met_cu_l1.hlm  in the Residue Database directory
+ Add residue template file res_mg.hlm  in the Residue Database directory
+ Add residue template file res_mg_dummy.hlm  in the Residue Database directory
+ Add residue template file res_mg_neutral.hlm  in the Residue Database directory
+ Add residue template file res_nhc.hlm  in the Residue Database directory
+ Add residue template file res_nma.hlm  in the Residue Database directory
+ Add residue template file res_nucleo.hlm  in the Residue Database directory
+ Add residue template file res_orn.hlm  in the Residue Database directory
+ Add residue template file res_orn_cbz.hlm  in the Residue Database directory
+ Add residue template file res_pepb.hlm  in the Residue Database directory
+ Add residue template file res_phed.hlm  in the Residue Database directory
+ Add residue template file res_phn.hlm  in the Residue Database directory
+ Add residue template file res_rbp2p.hlm  in the Residue Database directory
+ Add residue template file res_rbp3p.hlm  in the Residue Database directory
+ Add residue template file res_ru.hlm  in the Residue Database directory
+ Add residue template file res_rui.hlm  in the Residue Database directory
+ Add residue template file res_rui2p.hlm  in the Residue Database directory
+ Add residue template file res_rui3p.hlm  in the Residue Database directory
+ Add residue template file res_rupap_2+.hlm  in the Residue Database directory
+ Add residue template file res_rupap_3+.hlm  in the Residue Database directory
+ Add residue template file res_tempo.hlm  in the Residue Database directory
+ Add residue template file res_THY_cg.hlm  in the Residue Database directory
+ Add residue template file res_trp_ch_zero.hlm  in the Residue Database directory
+ Add residue template file res_trp_to_lys_st1.hlm  in the Residue Database directory
+ Add residue template file res_wat_spc.hlm  in the Residue Database directory
+ Add residue template file res_wta_wtb.hlm  in the Residue Database directory
+ Add residue template file res_ZNB.hlm  in the Residue Database directory
+ HaResDB::LoadXMLFile() fname = C:\Users\bogda\Downloads\harlem_win_2023_02_20\harlem\molset\..\residues_db\res_amino.xml
+Error in HaResDB::GetTemplateForResidue()
+ Can't find template for residue CU in DB
+ Error in HaResidue::AddMissingAtom() for residue $AZU_83_RU$CU129:A
+ Can't find residue template CU in the database
+
+
+ best PATHWAY coupling value between donor and acceptor is 6.237752e-07
+
+
+ structure of the best path
+ACCEPTOR
+$AZU_83_RU$RBP130:A.RU  6.237752e-07  $AZU_83_RU$HIS83:A.NE2     2.094e-01  NONBONDED JUMP
+$AZU_83_RU$HIS83:A.NE2  2.979213e-06  $AZU_83_RU$HIS83:A.CD2     6.000e-01  COVALENT BOND
+$AZU_83_RU$HIS83:A.CD2  4.965355e-06  $AZU_83_RU$HIS83:A.CG     6.000e-01  COVALENT BOND
+$AZU_83_RU$HIS83:A.CG  8.275592e-06  $AZU_83_RU$HIS83:A.CB     6.000e-01  COVALENT BOND
+$AZU_83_RU$HIS83:A.CB  1.379265e-05  $AZU_83_RU$HIS83:A.CA     6.000e-01  COVALENT BOND
+$AZU_83_RU$HIS83:A.CA  2.298775e-05  $AZU_83_RU$TRP48:A.O     3.080e-02  NONBONDED JUMP
+$AZU_83_RU$TRP48:A.O  7.462762e-04  $AZU_83_RU$TRP48:A.C     6.000e-01  COVALENT BOND
+$AZU_83_RU$TRP48:A.C  1.243794e-03  $AZU_83_RU$VAL49:A.N     6.000e-01  COVALENT BOND
+$AZU_83_RU$VAL49:A.N  2.072989e-03  $AZU_83_RU$PHE111:A.O     4.443e-02  NONBONDED JUMP
+$AZU_83_RU$PHE111:A.O  4.665600e-02  $AZU_83_RU$PHE111:A.C     6.000e-01  COVALENT BOND
+$AZU_83_RU$PHE111:A.C  7.776000e-02  $AZU_83_RU$CYS112:A.N     6.000e-01  COVALENT BOND
+$AZU_83_RU$CYS112:A.N  1.296000e-01  $AZU_83_RU$CYS112:A.CA     6.000e-01  COVALENT BOND
+$AZU_83_RU$CYS112:A.CA  2.160000e-01  $AZU_83_RU$CYS112:A.CB     6.000e-01  COVALENT BOND
+$AZU_83_RU$CYS112:A.CB  3.600000e-01  $AZU_83_RU$CYS112:A.SG     6.000e-01  COVALENT BOND
+$AZU_83_RU$CYS112:A.SG  6.000000e-01  $AZU_83_RU$CU129:A.CU     6.000e-01  COVALENT BOND
+$AZU_83_RU$CU129:A.CU  1.000000e+00
+DONOR
+ ETCouplMod::Clear()
+
