@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         //echo 'Information saved to the text file.' . PHP_EOL;
 
-        // Run the command and capture the output
+        // Run the command and capture the output HAHA PRIVET
 
 
         $command = '"C:\harlem\python.exe" "C:\MYPROG\HARLEM-WEB\calc_ET.py" ' . $targetPath . ' ' . $atom1Type . ' ' . $atom2Type;
