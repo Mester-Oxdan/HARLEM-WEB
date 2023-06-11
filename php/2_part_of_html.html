@@ -117,48 +117,6 @@
 </head>
 <body>
 
-  <div class="output-box">
-    <h2>Results:</h2>
-    <?php
-    $filename = 'command_output.txt';
-
-    // Open the file
-    $file = fopen($filename, 'r');
-
-    if ($file) {
-        // Read the file contents
-        $contents = fread($file, filesize($filename));
-
-        // Close the file
-        fclose($file);
-
-        // Find the start and end positions of the desired section
-        $startMarker = 'structure of the best path';
-        $endMarker = 'DONOR';
-
-        $startPos = strpos($contents, $startMarker);
-        $endPos = strpos($contents, $endMarker) + strlen($endMarker);
-
-        // Extract the desired section
-        $extracted = substr($contents, $startPos, $endPos - $startPos);
-
-        // Print the extracted section within a <pre> tag
-        echo '<pre>' . $extracted . '</pre>';
-    } else {
-        echo "Failed to open the file.";
-    }
-    ?>
-  </div>
-
-  <?php
-
-    // Clear text files
-    unlink('command_output.txt');
-    unlink('select_type_atom.txt');
-    unlink('name_of_project.txt');
-
-    ?>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -272,8 +230,8 @@
 
       let cfg = {
         divid: divid,
-        width: (pdbstr) ? 600: 300,
-        height: 300,
+        width: (pdbstr) ? 2000: 1800,
+        height: 500,
         mobilemenu: true,
         showcommand: false,
         showtitle: false,
@@ -312,6 +270,48 @@
   }); // document ready
 
 </script>
+
+<div class="output-box">
+  <h2>Results:</h2>
+  <?php
+  $filename = 'command_output.txt';
+
+  // Open the file
+  $file = fopen($filename, 'r');
+
+  if ($file) {
+      // Read the file contents
+      $contents = fread($file, filesize($filename));
+
+      // Close the file
+      fclose($file);
+
+      // Find the start and end positions of the desired section
+      $startMarker = 'structure of the best path';
+      $endMarker = 'DONOR';
+
+      $startPos = strpos($contents, $startMarker);
+      $endPos = strpos($contents, $endMarker) + strlen($endMarker);
+
+      // Extract the desired section
+      $extracted = substr($contents, $startPos, $endPos - $startPos);
+
+      // Print the extracted section within a <pre> tag
+      echo '<pre>' . $extracted . '</pre>';
+  } else {
+      echo "Failed to open the file.";
+  }
+  ?>
+</div>
+
+<?php
+
+  // Clear text files
+  unlink('command_output.txt');
+  unlink('select_type_atom.txt');
+  unlink('name_of_project.txt');
+
+  ?>
 
 <!-- log & Google Analytics -->
 <script type="text/javascript" src="https://www.ncbi.nlm.nih.gov/core/pinger/pinger.js"></script>
