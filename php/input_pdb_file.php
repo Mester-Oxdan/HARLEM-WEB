@@ -1,17 +1,22 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  //echo "input_pdb_file pt 1";
   $file = $_FILES['file'];
   $atom1Type = $_POST['atom1'];
   $atom2Type = $_POST['atom2'];
+  $pdb_id_id = $_POST['pdb_id'];
+  //echo "input_pdb_file pt 2";
 
   // Check if there was an error during the file upload
   if ($file['error'] === UPLOAD_ERR_OK) {
+    //echo "input_pdb_file pt 3";
     $fileTmpPath = $file['tmp_name'];
     $fileName = $file['name'];
     $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
 
     // Check if the file extension is .pdb
     if ($fileExtension === 'pdb') {
+      //echo "input_pdb_file pt 4";
       $targetDirectory = 'all_pdb_files/';
       $targetPath = $targetDirectory . $fileName;
 
@@ -19,17 +24,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       if (move_uploaded_file($fileTmpPath, $targetPath)) {
         // Save the information to a text file
         $filePath = 'select_type_atom.txt';
-        $data = "File: $fileName" . PHP_EOL . "Atom 1 Type: $atom1Type" . PHP_EOL . "Atom 2 Type: $atom2Type" . PHP_EOL;
+        $data = "File: $fileName" . PHP_EOL . "Donor: $atom1Type" . PHP_EOL . "Acceptor: $atom2Type" . PHP_EOL;
 
         // Append the new information to the text file
         file_put_contents($filePath, $data, FILE_APPEND | LOCK_EX);
+
+        $filePath_2 = 'pdb_id.txt';
+        $data_2 = "$pdb_id_id";
+
+        // Append the new information to the text file
+        file_put_contents($filePath_2, $data_2, FILE_APPEND | LOCK_EX);
 
         //echo 'Information saved to the text file.' . PHP_EOL;
 
         // Run the command and capture the output HAHA PRIVET
 
-
         $command = '"C:\harlem\python.exe" "C:\MYPROG\HARLEM-WEB\calc_ET.py" ' . $targetPath . ' ' . $atom1Type . ' ' . $atom2Type;
+        //echo $command;
         exec($command, $output, $status);
 
         if ($status === 0) {

@@ -100,6 +100,7 @@
       // Clear text files
       clearTextFile('command_output.txt');
       clearTextFile('select_type_atom.txt');
+      clearTextFile('pdb_id.txt');
 
       // Redirect to HTML file
       window.location.href = "../main_html.html";
@@ -144,6 +145,164 @@
     }
     ?>
   </div>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<meta name="description" content="iCn3D Structure Viewer">
+<meta name="keywords" content="NCBI, Structure, JavaScript, iCn3D, 3D, Viewer, WebGL, three.js, sequence, chemical">
+<meta name="robots" content="index,follow,noarchive">
+<meta name="ncbi_app" content="structure">
+<meta name="ncbi_pdid" content="icn3d">
+<meta name="ncbi_page" content="example">
+<meta name="ncbi_pinger_xml_http_request_override" content="false"/>
+<title>iCn3D: Web-based 3D Structure Viewer</title>
+<script type="text/javascript">
+    window.ncbi_startTime = new Date();
+</script>
+
+</head>
+<h3 style="text-align:center">sorry, for 3d Molecule choose pdb file again: </h3>
+  <div id="div2" class="gallery"></div>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+  <link rel="stylesheet" href="lib\icn3d.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="lib\threeClass.min.js"></script>
+  <script src="lib\icn3d.min.js"></script>
+  
+
+  <script type="text/javascript">
+    //============ modify default functions =========
+    // e.g., add the b-factor information in the mouseover
+    icn3d.Picking.prototype.showPicking = function(atom, x, y) { let ic = this.icn3d, me = ic.icn3dui;
+        //me = ic.setIcn3dui(ic.id);
+        if(me.cfg.cid !== undefined && ic.pk != 0) {
+            ic.pk = 1; // atom
+        }
+        else {
+            // do not change the picking option
+        }
+        ic.highlightlevel = ic.pk;
+        this.showPickingBase(atom, x, y);
+
+        if(ic.pk != 0) {
+            if(x !== undefined && y !== undefined) { // mouse over
+              if(me.cfg.showmenu != undefined && me.cfg.showmenu == true) {
+                  y += me.htmlCls.MENU_HEIGHT;
+              }
+              let text =(ic.pk == 1) ? atom.resn + atom.resi + '@' + atom.name : atom.resn + atom.resi;
+              text += ', b: ' + atom.b;
+              if(ic.structures !== undefined && Object.keys(ic.structures).length > 1) {
+                  text = atom.structure + '_' + atom.chain + ' ' + text;
+                  $("#" + ic.pre + "popup").css("width", "190px");
+              }
+              else {
+                  $("#" + ic.pre + "popup").css("width", "130px");
+              }
+              $("#" + ic.pre + "popup").html(text);
+              $("#" + ic.pre + "popup").css("top", y).css("left", x+20).show();
+            }
+            else {
+                // highlight the sequence background
+                ic.hlUpdateCls.updateHlAll();
+                let transformation = {}
+                transformation.factor = ic._zoomFactor;
+                transformation.mouseChange = ic.mouseChange;
+                //transformation.quaternion = ic.quaternion;
+                transformation.quaternion = {}
+                transformation.quaternion._x = parseFloat(ic.quaternion._x).toPrecision(5);
+                transformation.quaternion._y = parseFloat(ic.quaternion._y).toPrecision(5);
+                transformation.quaternion._z = parseFloat(ic.quaternion._z).toPrecision(5);
+                transformation.quaternion._w = parseFloat(ic.quaternion._w).toPrecision(5);
+                if(ic.bAddCommands) {
+                    ic.commands.push('pickatom ' + atom.serial + '|||' + ic.transformCls.getTransformationStr(transformation));
+                    ic.optsHistory.push(me.hashUtilsCls.cloneHash(ic.opts));
+                    ic.optsHistory[ic.optsHistory.length - 1].hlatomcount = Object.keys(ic.hAtoms).length;
+                    if(me.utilsCls.isSessionStorageSupported()) ic.setStyleCls.saveCommandsToSession();
+                    ic.STATENUMBER = ic.commands.length;
+                }
+                ic.logs.push('pickatom ' + atom.serial + '(chain: ' + atom.structure + '_' + atom.chain + ', residue: ' + atom.resn + ', number: ' + atom.resi + ', atom: ' + atom.name + ')');
+                if( $( "#" + ic.pre + "logtext" ).length )  {
+                  $("#" + ic.pre + "logtext").val("> " + ic.logs.join("\n> ") + "\n> ").scrollTop($("#" + ic.pre + "logtext")[0].scrollHeight);
+                }
+                // update the interaction flag
+                ic.bSphereCalc = false;
+                //me.htmlCls.clickMenuCls.setLogCmd('set calculate sphere false', true);
+                ic.bHbondCalc = false;
+                //me.htmlCls.clickMenuCls.setLogCmd('set calculate hbond false', true);
+            }
+        }
+    }
+    //============ End of: modify default functions =========
+</script>
+
+<script type="text/javascript">
+  $( document ).ready(async function() {
+    let icn3dui;
+
+    async function setupViewer(idName, idValue, divid, command, alignPdb, searchPdb, bImageonly) {
+      // remove previous dialogs if you want to update the same div with different views
+      // if(icn3dui && icn3dui.icn3d) {
+      //   icn3dui.icn3d.resizeCanvasCls.closeDialogs();
+      // }
+
+      let options = {};
+
+      // --Modify iCn3D --: add commands, e.g., 'color spectrum'
+      command = (command) ? command : '';
+
+      let resdef = (alignPdb) ? alignPdb.resdef : ((searchPdb) ? searchPdb.resdef : undefined);
+      let pdbstr = (alignPdb) ? alignPdb.pdbstr : ((searchPdb) ? searchPdb.pdbstr : undefined);
+
+      let imageonly = (bImageonly) ? true : false;
+
+      let cfg = {
+        divid: divid,
+        width: (pdbstr) ? 600: 300,
+        height: 300,
+        mobilemenu: true,
+        showcommand: false,
+        showtitle: false,
+        imageonly: imageonly,
+        command: command,
+        options: options,
+        chains: (alignPdb) ? alignPdb.chains : undefined,
+        resdef: resdef,
+        masterchain: (searchPdb) ? searchPdb.masterchain : undefined,
+        matchedchains: (searchPdb) ? searchPdb.matchedchains : undefined
+      };
+      if(idName !== '') cfg[idName] = idValue;
+      
+      cfg.idname = idName;
+      cfg.idvalue = idValue;
+      
+      // When pass from VAST neighbor page, use NCBI residue number and use asymmetric units to get all chains
+      if(searchPdb) {
+        cfg.usepdbnum = 0;
+        cfg.bu = 0;
+      }
+
+      icn3dui = new icn3d.iCn3DUI(cfg);
+
+      //communicate with the 3D viewer with chained functions
+      
+      await icn3dui.show3DStructure(pdbstr);
+      // add functions here
+      //icn3dui.updateHlAll();
+
+      return icn3dui;
+    }
+
+    await setupViewer('pdbid', '1JZE', 'div2');
+
+  }); // document ready
+
+</script>
+
+<!-- log & Google Analytics -->
+<script type="text/javascript" src="https://www.ncbi.nlm.nih.gov/core/pinger/pinger.js"></script>
 
   <div class="button_start">
 

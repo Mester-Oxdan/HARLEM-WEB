@@ -31,6 +31,7 @@
       color: white;
       padding: 8px 16px;
       border: none;
+      border-radius: 10px;
       cursor: pointer;
     }
     
@@ -56,9 +57,10 @@
       // Clear text files
       clearTextFile('command_output.txt');
       clearTextFile('select_type_atom.txt');
+      clearTextFile('pdb_id.txt');
 
       // Redirect to HTML file
-      //window.location.href = "../main_html.html";
+      window.location.href = "../main_html.html";
     }
 
     function clearTextFile(filename) {
@@ -70,19 +72,19 @@
   <div class="form-container">
     <h2>Electron transfer path ways calculations</h2>
   
-    <form action="php/input_pdb_file.php" method="POST" enctype="multipart/form-data">
+    <form action="php/input_pdb_file.php" method="POST" enctype="multipart/form-data" id = "test">
       <label for="file">Select PDB file:</label>
       <input type="file" name="file" id="file">
-    
-      <label for="atom1">Enter donor of atom:</label>
+
+      <label for="atom1"><br>Enter donor:</label>
       <input type="text" name="atom1" id="atom1">
     
-      <label for="atom2">Enter acceptor of atom:</label>
+      <label for="atom2"><br>Enter acceptor:</label>
       <input type="text" name="atom2" id="atom2">
     
-      <input type="submit" onclick="redirectToHTML()" value="Upload">
+      <input type="submit" value="Upload">
     </form>
   </div>
-
+  
 </body>
 </html>
