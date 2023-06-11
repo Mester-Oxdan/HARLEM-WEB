@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $file = $_FILES['file'];
   $atom1Type = $_POST['atom1'];
   $atom2Type = $_POST['atom2'];
-  $pdb_id_id = $_POST['pdb_id'];
+  $name = $_POST['name'];
   //echo "input_pdb_file pt 2";
 
   // Check if there was an error during the file upload
@@ -29,11 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Append the new information to the text file
         file_put_contents($filePath, $data, FILE_APPEND | LOCK_EX);
 
-        $filePath_2 = 'pdb_id.txt';
-        $data_2 = "$pdb_id_id";
+        $filePath = 'name_of_project.txt';
+        $data = $name;
 
         // Append the new information to the text file
-        file_put_contents($filePath_2, $data_2, FILE_APPEND | LOCK_EX);
+        file_put_contents($filePath, $data, FILE_APPEND | LOCK_EX);
 
         //echo 'Information saved to the text file.' . PHP_EOL;
 
@@ -53,6 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           file_put_contents($outputFilePath, $outputData, FILE_APPEND | LOCK_EX);
           //echo $outputData;
           include("2_part_of_html.html");
+          //echo '<script>window.open("2_part_of_html.html", "_blank");</script>';
         }
 
       } else {

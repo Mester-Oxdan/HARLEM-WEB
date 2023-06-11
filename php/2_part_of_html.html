@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PDB File Upload</title>
+  <?php
+  $title = file_get_contents('name_of_project.txt');
+  ?>
+  <title><?php echo $title; ?></title>
+  <link rel="icon" href="../resources/images/harlem_i.ico" type="image/x-icon">
   <style>
     /* CSS styles for the output box */
     .output-box {
       margin-top: 20px;
       padding: 20px;
+      border-radius: 10px;
       background-color: #f5f5f5;
       border: 1px solid #ccc;
       font-family: Arial, sans-serif;
@@ -14,7 +19,6 @@
     
     .output-box h2 {
       font-size: 18px;
-      margin-top: 0;
     }
     
     .output-box pre {
@@ -100,7 +104,7 @@
       // Clear text files
       clearTextFile('command_output.txt');
       clearTextFile('select_type_atom.txt');
-      clearTextFile('pdb_id.txt');
+      clearTextFile('name_of_project.txt');
 
       // Redirect to HTML file
       window.location.href = "../main_html.html";
@@ -146,6 +150,15 @@
     ?>
   </div>
 
+  <?php
+
+    // Clear text files
+    unlink('command_output.txt');
+    unlink('select_type_atom.txt');
+    unlink('name_of_project.txt');
+
+    ?>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -156,13 +169,12 @@
 <meta name="ncbi_pdid" content="icn3d">
 <meta name="ncbi_page" content="example">
 <meta name="ncbi_pinger_xml_http_request_override" content="false"/>
-<title>iCn3D: Web-based 3D Structure Viewer</title>
+
 <script type="text/javascript">
     window.ncbi_startTime = new Date();
 </script>
 
-</head>
-<h3 style="text-align:center">sorry, for 3d Molecule choose pdb file again: </h3>
+<h3 onload="redirectToHTML()" style="text-align: relative; ">Sorry, for 3d Molecule choose pdb file again: </h3>
   <div id="div2" class="gallery"></div>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
