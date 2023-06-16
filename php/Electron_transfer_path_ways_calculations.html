@@ -1,0 +1,55 @@
+<style>
+  body
+  {
+      overflow: hidden;
+  }
+  .background_molecule
+  {
+
+    background-image: url("resources/images/molecule_background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 735px;
+    width: 101%;
+    filter: blur(8px);
+      -webkit-filter: blur(8px);
+  }
+
+  
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Electron transfer path ways calculations</title>
+  <link rel="icon" href="resources/images/harlem_i.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/main_html_style.css">
+  
+</head>
+<body>
+
+  <div class="background_molecule blur-background"></div>
+  <div class="form-container">
+    <h2>Electron transfer path ways calculations</h2>
+
+    <form action="input_pdb_file.php" target="_self" method="POST" enctype="multipart/form-data">
+      <label for="name">Enter name of project:</label>
+      <input type="text" name="name" id="name">
+
+      <label for="file">Select PDB file:</label>
+      <input type="file" name="file" id="file">
+
+      <label for="atom1">Enter donor:</label>
+      <input type="text" name="atom1" id="atom1">
+    
+      <label for="atom2">Enter acceptor:</label>
+      <input type="text" name="atom2" id="atom2">
+      <br>
+      <br>
+      <input type="submit" value="Upload">
+    </form>
+  </div>
+  
+</body>
+</html>
