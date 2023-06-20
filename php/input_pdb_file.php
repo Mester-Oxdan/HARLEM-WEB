@@ -43,7 +43,7 @@ try{
 
           // Run the command and capture the output HAHA PRIVET
 
-          $command = '"C:\harlem\python.exe" "C:\MYPROG\HARLEM-WEB\calc_ET.py" ' . $targetPath . ' ' . $atom1Type . ' ' . $atom2Type;
+          $command = '"C:\harlem\python.exe" "../calc_ET.py" ' . $targetPath . ' ' . $atom1Type . ' ' . $atom2Type;
           //echo $command;
           exec($command, $output, $status);
 
