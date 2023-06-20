@@ -1,6 +1,0 @@
-File: 1jze.pdb
-Donor:  DRU903.RU
-Acceptor: CU901
-File: 1jze.pdb
-Donor:  DRU903.RU
-Acceptor: CU901

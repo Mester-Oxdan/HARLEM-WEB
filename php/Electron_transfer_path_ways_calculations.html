@@ -1,55 +1,177 @@
-<style>
-  body
-  {
-      overflow: hidden;
-  }
-  .background_molecule
-  {
-
-    background-image: url("resources/images/molecule_background.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 735px;
-    width: 101%;
-    filter: blur(8px);
-      -webkit-filter: blur(8px);
-  }
-
-  
-</style>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Electron transfer path ways calculations</title>
+  <title>Electron transfer pathways calculations</title>
   <link rel="icon" href="resources/images/harlem_i.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/main_html_style.css">
-  
+
+  <style>
+    body {
+      overflow: hidden;
+    }
+
+    .background_molecule {
+      background-image: url("resources/images/molecule_background.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 735px;
+      width: 101%;
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="file"] {
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+
+    .form-container input[type="text"]:focus,
+    .form-container input[type="file"]:focus {
+      border-color: #007bff;
+    }
+
+    .form-container .required-field::before {
+      content: "";
+      color: red;
+      font-weight: bold;
+    }
+
+    .form-container .validation-message {
+      color: red;
+      font-size: 0.8em;
+      margin-top: 5px;
+    }
+
+    .close-btn {
+   
+      color: #444;
+               cursor: pointer;
+               left: 95%;
+               height: 35px;
+               width: 35px;
+               right: 880px;
+               top: -333px;
+               position: relative;
+               transition: 250ms ease;
+   
+               &:before,
+               &:after {
+                   content: "";
+                   height: 2px;
+                   background: #444;
+                   width: 100%;
+                   top: 50%;
+                   left: 5%;
+                   position: absolute;
+                   transition: 250ms ease;
+               }
+               &:before {
+                   transform: rotate(-45deg);
+               }
+               &:after {
+                   transform: rotate(45deg);
+               }
+               &:hover,
+               &:focus {
+                   border: 3px solid;
+                   border-radius: 100%;
+                   &:before,
+                   &:after {
+                    
+                       width: 50%;
+                       left: 25%;
+                   }
+               }
+   }
+
+  </style>
 </head>
 <body>
-
   <div class="background_molecule blur-background"></div>
   <div class="form-container">
-    <h2>Electron transfer path ways calculations</h2>
+    <h2>Electron transfer pathways calculations</h2>
 
     <form action="input_pdb_file.php" target="_self" method="POST" enctype="multipart/form-data">
-      <label for="name">Enter name of project:</label>
+      <label for="name">Enter name of project<span class="required-field"></span>:</label>
       <input type="text" name="name" id="name">
+      <span class="validation-message" id="name-error"></span>
 
-      <label for="file">Select PDB file:</label>
+      <label for="file">Select PDB file<span class="required-field"></span>:</label>
       <input type="file" name="file" id="file">
+      <span class="validation-message" id="file-error"></span>
 
-      <label for="atom1">Enter donor:</label>
+      <label for="atom1">Enter donor<span class="required-field"></span>:</label>
       <input type="text" name="atom1" id="atom1">
-    
-      <label for="atom2">Enter acceptor:</label>
+      <span class="validation-message" id="atom1-error"></span>
+
+      <label for="atom2">Enter acceptor<span class="required-field"></span>:</label>
       <input type="text" name="atom2" id="atom2">
+      <span class="validation-message" id="atom2-error"></span>
+      
       <br>
       <br>
-      <input type="submit" value="Upload">
+      <input type="submit" value="Run!" onclick="return validateForm();">
+      <div class="close-btn" onclick="openHTMLFile()"></div>
     </form>
   </div>
-  
+
+  <script>
+
+    function openHTMLFile() {
+      history.back();
+    }
+
+    function validateForm() {
+      var nameInput = document.getElementById("name");
+      var fileInput = document.getElementById("file");
+      var atom1Input = document.getElementById("atom1");
+      var atom2Input = document.getElementById("atom2");
+      var isValid = true;
+
+      if (nameInput.value.trim() === "") {
+        document.getElementById("name-error").textContent = "Please fill in the name of project field.";
+        document.getElementById("name").classList.add("required-field");
+        isValid = false;
+      } else {
+        document.getElementById("name-error").textContent = "";
+        document.getElementById("name").classList.remove("required-field");
+      }
+
+      if (fileInput.value.trim() === "") {
+        document.getElementById("file-error").textContent = "Please select a PDB file.";
+        document.getElementById("file").classList.add("required-field");
+        isValid = false;
+      } else {
+        document.getElementById("file-error").textContent = "";
+        document.getElementById("file").classList.remove("required-field");
+      }
+
+      if (atom1Input.value.trim() === "") {
+        document.getElementById("atom1-error").textContent = "Please fill in the donor field.";
+        document.getElementById("atom1").classList.add("required-field");
+        isValid = false;
+      } else {
+        document.getElementById("atom1-error").textContent = "";
+        document.getElementById("atom1").classList.remove("required-field");
+      }
+
+      if (atom2Input.value.trim() === "") {
+        document.getElementById("atom2-error").textContent = "Please fill in the acceptor field.";
+        document.getElementById("atom2").classList.add("required-field");
+        isValid = false;
+      } else {
+        document.getElementById("atom2-error").textContent = "";
+        document.getElementById("atom2").classList.remove("required-field");
+      }
+
+      if (!isValid) {
+        alert("Please fill in all the required fields.");
+      }
+
+      return isValid;
+    }
+  </script>
 </body>
 </html>

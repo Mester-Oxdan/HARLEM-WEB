@@ -1,4 +1,7 @@
 <?php
+
+$error_404 = true;
+
 try{
   if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     //echo "input_pdb_file pt 1";
@@ -53,23 +56,30 @@ try{
             $outputData = implode("\n", $output) . PHP_EOL;
             file_put_contents($outputFilePath, $outputData, FILE_APPEND | LOCK_EX);
             //echo $outputData;
+            $error_404 = false;
             include("main_start.html");
             //echo '<script>window.open("2_part_of_html.html", "_blank");</script>';
           }
 
         } else {
-          echo 'Error saving the file.' . PHP_EOL;
+          include("error_404.html");
         }
       } else {
-        echo 'Invalid file format. Only PDB files are allowed.' . PHP_EOL;
+        include("error_404.html");
       }
     } else {
-      echo 'Error uploading the file.' . PHP_EOL;
+      include("error_404.html");
     }
   }
 }
 catch (Exception $e)
 {
-  echo "Invalid information." . PHP_EOL;
+  include("error_404.html");
 }
+
+if ($error_404 == true)
+{
+  include("error_404.html");
+}
+
 ?>
