@@ -28,6 +28,8 @@
   ?>
   <title><?php echo $title; ?></title>
   <link rel="icon" href="resources/images/harlem_i.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../css/main_html_style.css">
+  <link rel="stylesheet" href="elect_pathways.css">
 <script type="text/javascript">
     window.ncbi_startTime = new Date();
 </script>
@@ -46,7 +48,16 @@ body{
       border: 1px solid #ccc;
       font-family: Arial, sans-serif;
       position: relative;
-      top: -765px;
+      top: -760px;
+      resize: both;
+      overflow: auto;
+    }
+
+    .output-box.horizontal {
+      resize: horizontal;
+    }
+    .output-box.vertical {
+      resize: vertical;
     }
     
     .output-box h2 {
@@ -253,6 +264,91 @@ body{
       }
     }
 
+
+    .background_molecule {
+      background-image: url("resources/images/molecule_background.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 735px;
+      width: 101%;
+      filter: blur(8px);
+      -webkit-filter: blur(8px);
+    }
+
+    .form-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 20px;
+      border: 1px solid #ccc;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 999;
+      width: 330px;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="file"] {
+      border: 1px solid #ccc;
+      padding: 5px;
+    }
+
+    .form-container input[type="text"]:focus,
+    .form-container input[type="file"]:focus {
+      border-color: #007bff;
+    }
+
+    .form-container .required-field::before {
+      content: "";
+      color: red;
+      font-weight: bold;
+    }
+
+    .form-container .validation-message {
+      color: red;
+      font-size: 0.8em;
+      margin-top: 5px;
+    }
+
+    .close-btn {
+      color: #444;
+      cursor: pointer;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      height: 35px;
+      width: 35px;
+      transition: 250ms ease;
+    }
+
+    .close-btn:before,
+    .close-btn:after {
+      content: "";
+      height: 2px;
+      background: #444;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      position: absolute;
+      transition: 250ms ease;
+    }
+
+    .close-btn:before {
+      transform: rotate(-45deg);
+    }
+
+    .close-btn:after {
+      transform: rotate(45deg);
+    }
+
+    .close-btn:hover,
+    .close-btn:focus {
+      border: 3px solid;
+      border-radius: 100%;
+    }
+
   </style>
   <script>
     function redirectToHTML() {
@@ -262,7 +358,7 @@ body{
       clearTextFile('name_of_project.txt');
 
       // Redirect to HTML file
-      window.location.href = "Electron_transfer_path_ways_calculations.html";
+      
     }
 
     function clearTextFile(filename) {
@@ -556,6 +652,9 @@ body{
   
   </div>
 
+  
+  
+
   <div class="output-box">
     <h2>Results:</h2>
     <?php
@@ -599,6 +698,18 @@ body{
     unlink('command_output.txt');
     unlink('select_type_atom.txt');
     unlink('name_of_project.txt');
+
+    $folderPath = 'all_pdb_files'; // Replace with the actual folder path
+
+    // Get the list of files in the folder
+    $files = glob($folderPath . '/*');
+
+    // Loop through the files and delete them
+    foreach ($files as $file) {
+        if (is_file($file)) {
+            unlink($file); // Delete the file
+        }
+    }
   
     ?>
 
