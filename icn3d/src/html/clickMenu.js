@@ -222,7 +222,7 @@ class ClickMenu {
         });
 
 	      me.myEventCls.onIds("#" + me.pre + "mn2_mutation", "click", function(e) { let ic = me.icn3d; // e.preventDefault();
-         me.htmlCls.dialogCls.openDlg('dl_mutation_2', 'Show the mutations in 3D');
+         me.htmlCls.dialogCls.openDlg('dl_mutation_2', 'Electron transfer pathways calculations');
          //window.open('..\\..\\..\\php\\elec_pathways.html', '_self');
          /*var container = document.createElement("div");
 

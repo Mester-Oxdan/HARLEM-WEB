@@ -6770,7 +6770,7 @@ var icn3d = (function (exports) {
             });
 
     	      me.myEventCls.onIds("#" + me.pre + "mn2_mutation", "click", function(e) { me.icn3d; // e.preventDefault();
-             me.htmlCls.dialogCls.openDlg('dl_mutation_2', 'Show the mutations in 3D');
+             me.htmlCls.dialogCls.openDlg('dl_mutation_2', 'Electron transfer pathways calculations');
              //window.open('..\\..\\..\\php\\elec_pathways.html', '_self');
              /*var container = document.createElement("div");
 
@@ -11820,24 +11820,120 @@ var icn3d = (function (exports) {
             html += me.htmlCls.buttonStr + "reload_mutation_pdb' style='margin-left:20px' title='Show the mutations in 3D and export the PDB of the mutant within 10 angstrom'>PDB</button>";
             html += "<br/><br/></div></div>";
 
+            /////////
             html += me.htmlCls.divStr + "dl_mutation_2' class='" + dialogClass + "'>";
-            html += this.addNotebookTitle('dl_mutation_2', 'Mutation analysis');
+            html += this.addNotebookTitle('dl_mutation_2', 'Electron transfer pathways calculations');
             html += "<div style='width:500px'>";
-            html += 'Please specify the mutations with a comma separated mutation list. Each mutation can be specified as "[<b>uppercase</b> PDB ID or AlphaFold UniProt ID]_[Chain Name]_[Residue Number]_[One Letter Mutant Residue]". E.g., the mutation of N501Y in the E chain of PDB 6M0J can be specified as "6M0J_E_501_Y". For AlphaFold structures, the "Chain ID" is "A".<br/>If you load a custom structure without PDB or UniProt ID, you can open "Seq. & Annotations" window and find the chain ID such as "stru_A". The part before the underscore is the structure ID, which can be used to specify the mutation such as "stru_A_...". Remember to choose "Show Mutation in: Current Page".<br/><br/>';
-            html += "<div style='display:inline-block; width:110px'>Mutations: </div>" + me.htmlCls.inputTextStr + "id='" + me.pre + "mutationids' value='6M0J_E_484_K,6M0J_E_501_Y,6M0J_E_417_N' size=50><br/><br/>";
+            html += '<h2>Electron transfer pathways calculations</h2>';
+            html += `<style>\
+}\
+.submit {\
+width: 100px;\
+  height: 40px;\
+  background-color: green;\
+  color: white;\
+  padding: 8px 16px;\
+  border: none;\
+  border-radius: 10px;\
+  cursor: pointer;\
+  \
+  transition: all 0.3s ease;\
+    -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);\
+    mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);\
+    -webkit-mask-size: 800%;\
+    mask-size: 800%;\
+\
+}\
+\
+</style>\
+        </style><form action="input_pdb_file.php" target="_self" method="POST" enctype="multipart/form-data">\
+      <label for="name"><b>Enter name of project:</b></label>\
+      <input type="text" name="name" id="name" placeholder="Name" style="font-size: 13px; border-radius: 8px;" class="custom-input">\
+      <span id="name-error"></span>\
+\
+<br>\
+<br>\
+      <label for="file"><b>Select PDB file:</b></label>\
+      <input type="file" name="file" id="file">\
+      <span id="file-error"></span>\
+\
+<br>\
+<br>\
+      <label for="atom1"><b>Enter donor:</b></label>\
+      <input type="text" name="atom1" id="atom1" placeholder="Donor" style="font-size: 13px; border-radius: 8px;" class="custom-input">\
+      <span id="atom1-error"></span>\
+\
+<br>\
+<br>\
+      <label for="atom2"><b>Enter acceptor:</b></label>\
+      <input type="text" name="atom2" id="atom2" placeholder="Acceptor" style="font-size: 13px; border-radius: 8px;" class="custom-input">\
+      <span id="atom2-error"></span>\
+      \
+      <br>\
+      <br>\
+      <div class="submit">\
+      <input type="submit" value="Run!" onclick="return validateForm();" style="width: 100px;height: 40px;background-color: green;color: white;padding: 8px 16px;border: none;border-radius: 10px;cursor: pointer;">\
+      </div>\
+    </form>\
+    
+    <script>\
+    function validateForm() {\
+        var nameInput = document.getElementById("name");\
+        var fileInput = document.getElementById("file");\
+        var atom1Input = document.getElementById("atom1");\
+        var atom2Input = document.getElementById("atom2");\
+        var isValid = true;\
+  \
+        if (nameInput.value.trim() === "") {\
+          document.getElementById("name-error").textContent = "Please fill in the name of project field.";\
+          document.getElementById("name-error").style.color = "red";\
+          document.getElementById("name").classList.add("required-field");\
+          isValid = false;\
+        } else {\
+          document.getElementById("name-error").textContent = "";\
+          document.getElementById("name").classList.remove("required-field");\
+        }\
+  \
+        if (fileInput.value.trim() === "") {\
+          document.getElementById("file-error").textContent = "Please select a PDB file.";\
+          document.getElementById("file-error").style.color = "red";\
+          document.getElementById("file").classList.add("required-field");\
+          isValid = false;\
+        } else {\
+          document.getElementById("file-error").textContent = "";\
+          document.getElementById("file").classList.remove("required-field");\
+        }\
+  \
+        if (atom1Input.value.trim() === "") {\
+          document.getElementById("atom1-error").textContent = "Please fill in the donor field.";\
+          document.getElementById("atom1-error").style.color = "red";\
+          document.getElementById("atom1").classList.add("required-field");\
+          isValid = false;\
+        } else {\
+          document.getElementById("atom1-error").textContent = "";\
+          document.getElementById("atom1").classList.remove("required-field");\
+        }\
+  \
+        if (atom2Input.value.trim() === "") {\
+          document.getElementById("atom2-error").textContent = "Please fill in the acceptor field.";\
+          document.getElementById("atom2-error").style.color = "red";\
+          document.getElementById("atom2").classList.add("required-field");\
+          isValid = false;\
+        } else {\
+          document.getElementById("atom2-error").textContent = "";\
+          document.getElementById("atom2").classList.remove("required-field");\
+        }\
+  \
+        if (!isValid) {\
+          alert("Please fill in all the required fields.");\
+        }\
+  \
+        return isValid;\
+      }</script>`;
      
-            html += '<b>ID Type</b>: ';
-            html += '<input type="radio" name="' + me.pre + 'idsource" id="' + me.pre + 'type_mmdbid" value="mmdbid" checked>PDB ID';
-            html += '<input type="radio" name="' + me.pre + 'idsource" id="' + me.pre + 'type_afid" value="afid" style="margin-left:20px">AlphaFold UniProt ID<br><br>';
-
-            html += '<b>Show Mutation in</b>: ';
-            html += '<input type="radio" name="' + me.pre + 'pdbsource" id="' + me.pre + 'showin_currentpage" value="currentpage">Current Page';
-            html += '<input type="radio" name="' + me.pre + 'pdbsource" id="' + me.pre + 'showin_newpage" value="newpage" style="margin-left:20px" checked>New Page<br><br>';
-
-            html += me.htmlCls.buttonStr + "reload_mutation_3d' title='Show the mutations in 3D using the scap program'>3D with scap</button>";
-            html += me.htmlCls.buttonStr + "reload_mutation_inter' style='margin-left:20px' title='Show the mutations in 3D and the change of interactions'>Interactions</button>";
-            html += me.htmlCls.buttonStr + "reload_mutation_pdb' style='margin-left:20px' title='Show the mutations in 3D and export the PDB of the mutant within 10 angstrom'>PDB</button>";
+            
             html += "<br/><br/></div></div>";
+            //////////
 
             html += me.htmlCls.divStr + "dl_mol2file' class='" + dialogClass + "'>";
             html += this.addNotebookTitle('dl_mol2file', 'Please input a Mol2 file');
