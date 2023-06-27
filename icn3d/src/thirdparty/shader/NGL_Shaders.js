@@ -1,0 +1,1 @@
+var $NGL_shaderTextHash = {};
