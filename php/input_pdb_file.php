@@ -1,5 +1,24 @@
 <?php
 
+//echo "test, hello";
+
+// Clear text files
+unlink('command_output.txt');
+unlink('select_type_atom.txt');
+unlink('name_of_project.txt');
+
+$folderPath = 'all_pdb_files'; // Replace with the actual folder path
+
+// Get the list of files in the folder
+$files = glob($folderPath . '/*');
+
+// Loop through the files and delete them
+foreach ($files as $file) {
+    if (is_file($file)) {
+        unlink($file); // Delete the file
+    }
+}
+
 $error_404 = true;
 
 try{
@@ -43,7 +62,7 @@ try{
 
           // Run the command and capture the output HAHA PRIVET
 
-          $command = '"C:\harlem\python.exe" "../calc_ET.py" ' . $targetPath . ' ' . $atom1Type . ' ' . $atom2Type;
+          $command = '"C:\harlem\python.exe" "calc_ET.py" ' . $targetPath . ' ' . $atom1Type . ' ' . $atom2Type;
           //echo $command;
           exec($command, $output, $status);
 
@@ -55,31 +74,62 @@ try{
             $outputFilePath = 'command_output.txt';
             $outputData = implode("\n", $output) . PHP_EOL;
             file_put_contents($outputFilePath, $outputData, FILE_APPEND | LOCK_EX);
-            //echo $outputData;
+            
             $error_404 = false;
-            include("main_start.html");
+            //echo "<pre>$outputData</pre>";
+            try {
+                $filename = 'command_output.txt';
+            
+                // Open the file
+                $file = fopen($filename, 'r');
+            
+                if ($file) {
+                    // Read the file contents
+                    $contents = fread($file, filesize($filename));
+            
+                    // Close the file
+                    fclose($file);
+            
+                    // Find the start and end positions of the desired section
+                    $startMarker = 'structure of the best path';
+                    $endMarker = 'DONOR';
+            
+                    $startPos = strpos($contents, $startMarker);
+                    $endPos = strpos($contents, $endMarker, $startPos + strlen($startMarker));
+            
+                    if ($startPos !== false && $endPos !== false) {
+                        // Extract the desired section
+                        $extracted = substr($contents, $startPos, $endPos - $startPos);
+            
+                        echo "<pre>$extracted</pre>";
+                    }
+                }
+            } catch (Exception $e) {
+                // Print nothing
+            }
+            //include("main_start.html");
             //echo '<script>window.open("2_part_of_html.html", "_blank");</script>';
           }
 
         } else {
-          include("error_404.html");
+          //include("error_404.html");
         }
       } else {
-        include("error_404.html");
+        //include("error_404.html");
       }
     } else {
-      include("error_404.html");
+      //include("error_404.html");
     }
   }
 }
 catch (Exception $e)
 {
-  include("error_404.html");
+  //include("error_404.html");
 }
 
 if ($error_404 == true)
 {
-  include("error_404.html");
+  //include("error_404.html");
 }
 
 ?>

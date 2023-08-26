@@ -6972,6 +6972,10 @@ class Dialog {
  * @author Jiyao Wang <wangjiy@ncbi.nlm.nih.gov> / https://github.com/ncbi/icn3d
  */
 
+//$(document).ready(function() {
+  //$.getScript('../icn3d/dist/lib/jquery-3.5.0.min.js');
+//});
+
 class SetDialog {
     constructor(icn3dui) {
         this.icn3dui = icn3dui;
@@ -7309,111 +7313,147 @@ class SetDialog {
         html += this.addNotebookTitle('dl_mutation_2', 'Electron transfer pathways calculations');
         html += "<div style='width:500px'>";
         html += '<h2>Electron transfer pathways calculations</h2>';
-        html += `<style>\
-}\
-.submit {\
-width: 100px;\
-  height: 40px;\
-  background-color: green;\
-  color: white;\
-  padding: 8px 16px;\
-  border: none;\
-  border-radius: 10px;\
-  cursor: pointer;\
-  \
-  transition: all 0.3s ease;\
-    -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);\
-    mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);\
-    -webkit-mask-size: 800%;\
-    mask-size: 800%;\
-\
-}\
-\
-</style>\
-        </style><form action="input_pdb_file.php" target="_self" method="POST" enctype="multipart/form-data">\
-      <label for="name"><b>Enter name of project:</b></label>\
-      <input type="text" name="name" id="name" placeholder="Name" style="font-size: 13px; border-radius: 8px;" class="custom-input">\
-      <span id="name-error"></span>\
-\
-<br>\
-<br>\
-      <label for="file"><b>Select PDB file:</b></label>\
-      <input type="file" name="file" id="file">\
-      <span id="file-error"></span>\
-\
-<br>\
-<br>\
-      <label for="atom1"><b>Enter donor:</b></label>\
-      <input type="text" name="atom1" id="atom1" placeholder="Donor" style="font-size: 13px; border-radius: 8px;" class="custom-input">\
-      <span id="atom1-error"></span>\
-\
-<br>\
-<br>\
-      <label for="atom2"><b>Enter acceptor:</b></label>\
-      <input type="text" name="atom2" id="atom2" placeholder="Acceptor" style="font-size: 13px; border-radius: 8px;" class="custom-input">\
-      <span id="atom2-error"></span>\
-      \
-      <br>\
-      <br>\
-      <div class="submit">\
-      <input type="submit" value="Run!" onclick="return validateForm();" style="width: 100px;height: 40px;background-color: green;color: white;padding: 8px 16px;border: none;border-radius: 10px;cursor: pointer;">\
-      </div>\
-    </form>\
-    
-    <script>\
-    function validateForm() {\
-        var nameInput = document.getElementById("name");\
-        var fileInput = document.getElementById("file");\
-        var atom1Input = document.getElementById("atom1");\
-        var atom2Input = document.getElementById("atom2");\
-        var isValid = true;\
-  \
-        if (nameInput.value.trim() === "") {\
-          document.getElementById("name-error").textContent = "Please fill in the name of project field.";\
-          document.getElementById("name-error").style.color = "red";\
-          document.getElementById("name").classList.add("required-field");\
-          isValid = false;\
-        } else {\
-          document.getElementById("name-error").textContent = "";\
-          document.getElementById("name").classList.remove("required-field");\
-        }\
-  \
-        if (fileInput.value.trim() === "") {\
-          document.getElementById("file-error").textContent = "Please select a PDB file.";\
-          document.getElementById("file-error").style.color = "red";\
-          document.getElementById("file").classList.add("required-field");\
-          isValid = false;\
-        } else {\
-          document.getElementById("file-error").textContent = "";\
-          document.getElementById("file").classList.remove("required-field");\
-        }\
-  \
-        if (atom1Input.value.trim() === "") {\
-          document.getElementById("atom1-error").textContent = "Please fill in the donor field.";\
-          document.getElementById("atom1-error").style.color = "red";\
-          document.getElementById("atom1").classList.add("required-field");\
-          isValid = false;\
-        } else {\
-          document.getElementById("atom1-error").textContent = "";\
-          document.getElementById("atom1").classList.remove("required-field");\
-        }\
-  \
-        if (atom2Input.value.trim() === "") {\
-          document.getElementById("atom2-error").textContent = "Please fill in the acceptor field.";\
-          document.getElementById("atom2-error").style.color = "red";\
-          document.getElementById("atom2").classList.add("required-field");\
-          isValid = false;\
-        } else {\
-          document.getElementById("atom2-error").textContent = "";\
-          document.getElementById("atom2").classList.remove("required-field");\
-        }\
-  \
-        if (!isValid) {\
-          alert("Please fill in all the required fields.");\
-        }\
-  \
-        return isValid;\
-      }</script>`;
+        
+        html += `
+          <style>
+        
+        .submit {
+        width: 100px;
+        height: 40px;
+        background-color: green;
+        color: white;
+        padding: 8px 16px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        
+        transition: all 0.3s ease;
+        -webkit-mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
+        mask-image: linear-gradient(45deg,#000 25%,rgba(0,0,0,.2) 50%,#000 75%);
+        -webkit-mask-size: 800%;
+        mask-size: 800%;
+        
+        }
+        
+        </style>
+        <label for="name"><b>Enter name of project:</b></label>
+        <input type="text" name="name" id="name" placeholder="Name" style="font-size: 13px; border-radius: 8px;" class="custom-input">
+        <span id="name-error"></span>
+        
+        <br>
+        <br>
+        <label for="file"><b>Select PDB file:</b></label>
+        <input type="file" name="file" id="file">
+        <span id="file-error"></span>
+        
+        <br>
+        <br>
+        <label for="atom1"><b>Enter donor:</b></label>
+        <input type="text" name="atom1" id="atom1" placeholder="Donor" style="font-size: 13px; border-radius: 8px;" class="custom-input">
+        <span id="atom1-error"></span>
+        
+        <br>
+        <br>
+        <label for="atom2"><b>Enter acceptor:</b></label>
+        <input type="text" name="atom2" id="atom2" placeholder="Acceptor" style="font-size: 13px; border-radius: 8px;" class="custom-input">
+        <span id="atom2-error"></span>
+        
+        <br>
+        <br>
+        <div class="submit">
+        <input type="submit" value="Run!" onclick="return validateForm();" style="width: 100px;height: 40px;background-color: green;color: white;padding: 8px 16px;border: none;border-radius: 10px;cursor: pointer;">
+        </div>
+        
+        <div id="output"></div>
+        
+        <script>
+        
+        function validateForm() {
+        
+          var nameInput = document.getElementById("name");
+          var fileInput = document.getElementById("file");
+          var atom1Input = document.getElementById("atom1");
+          var atom2Input = document.getElementById("atom2");
+          var isValid = true;
+        
+          if (nameInput.value.trim() === "") {
+            document.getElementById("name-error").textContent = "Please fill in the name of project field.";
+            document.getElementById("name-error").style.color = "red";
+            document.getElementById("name").classList.add("required-field");
+            isValid = false;
+          } else {
+            document.getElementById("name-error").textContent = "";
+            document.getElementById("name").classList.remove("required-field");
+          }
+        
+          if (fileInput.value.trim() === "") {
+            document.getElementById("file-error").textContent = "Please select a PDB file.";
+            document.getElementById("file-error").style.color = "red";
+            document.getElementById("file").classList.add("required-field");
+            isValid = false;
+          } else {
+            document.getElementById("file-error").textContent = "";
+            document.getElementById("file").classList.remove("required-field");
+          }
+        
+          if (atom1Input.value.trim() === "") {
+            document.getElementById("atom1-error").textContent = "Please fill in the donor field.";
+            document.getElementById("atom1-error").style.color = "red";
+            document.getElementById("atom1").classList.add("required-field");
+            isValid = false;
+          } else {
+            document.getElementById("atom1-error").textContent = "";
+            document.getElementById("atom1").classList.remove("required-field");
+          }
+        
+          if (atom2Input.value.trim() === "") {
+            document.getElementById("atom2-error").textContent = "Please fill in the acceptor field.";
+            document.getElementById("atom2-error").style.color = "red";
+            document.getElementById("atom2").classList.add("required-field");
+            isValid = false;
+          } else {
+            document.getElementById("atom2-error").textContent = "";
+            document.getElementById("atom2").classList.remove("required-field");
+          }
+        
+          if (!isValid) {
+            alert("Please fill in all the required fields.");
+            return false;
+          }   
+          var my$ = jQuery.noConflict();
+          
+              var name = my$("#name").val(); // Get the command from the input field
+              var file = my$("#file")[0].files[0]; // Get the command from the input field
+              var atom_1 = my$("#atom1").val(); // Get the command from the input field
+              var atom_2 = my$("#atom2").val(); // Get the command from the input field
+        
+              var formData = new FormData();
+              formData.append("name", name);
+              formData.append("file", file);
+              formData.append("atom1", atom_1);
+              formData.append("atom2", atom_2);
+        
+              // Send an AJAX request to the PHP script
+              my$.ajax({
+                type: "POST",
+                url: "input_pdb_file.php",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(output) {
+                  my$("#output").html(output); // Display the output in the output div
+                  //alert("done");
+                },
+                error: function(xhr, status, error) {
+                  var err = JSON.parse(xhr.responseText);
+                  alert(err.Message);
+                }
+              });
+            
+          //return isValid;
+          return false;
+        
+        }</script>`;
  
         
         html += "<br/><br/></div></div>";
