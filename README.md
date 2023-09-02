@@ -10,3 +10,7 @@ PLEASE READ ME FIRST!!!!!!!
 (Notes):
 
 (About/Main info):
+
+Photos 2023:
+
+coming...
