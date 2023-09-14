@@ -651,47 +651,6 @@ body{
     
   
   </div>
-
-  
-  
-
-  <div class="output-box">
-    <h2>Results:</h2>
-    <?php
-  try {
-      $filename = 'command_output.txt';
-  
-      // Open the file
-      $file = fopen($filename, 'r');
-  
-      if ($file) {
-          // Read the file contents
-          $contents = fread($file, filesize($filename));
-  
-          // Close the file
-          fclose($file);
-  
-          // Find the start and end positions of the desired section
-          $startMarker = 'structure of the best path';
-          $endMarker = 'DONOR';
-  
-          $startPos = strpos($contents, $startMarker);
-          $endPos = strpos($contents, $endMarker, $startPos + strlen($startMarker));
-  
-          if ($startPos !== false && $endPos !== false) {
-              // Extract the desired section
-              $extracted = substr($contents, $startPos, $endPos - $startPos);
-  
-              echo "<pre>$extracted</pre>";
-              
-          }
-      }
-  } catch (Exception $e) {
-      // Print nothing
-  }
-  ?>
-  
-  </div>
   
   <?php
   
