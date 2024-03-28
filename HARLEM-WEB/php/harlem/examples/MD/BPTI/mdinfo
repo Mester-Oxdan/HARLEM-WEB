@@ -1,0 +1,9 @@
+
+ NSTEP =        0   TIME(PS) =       0.000  TEMP(K) =   298.51  PRESS =********
+ Etot   = **************  EKtot   =     16541.5179  EPtot      = **************
+ BOND   =       108.8689  ANGLE   =       187.4761  DIHED      =       514.4303
+ 1-4 NB =       232.0702  1-4 EEL =      1696.2071  VDWAALS    = **************
+ EELEC  =    -63420.5090  EHBOND  =         0.0000  RESTRAINT  =         0.0000
+ EKCMT  =      5257.8109  VIRIAL  = **************  VOLUME     =    178672.7923
+                                                    Density    =         1.0480
+ Ewald error estimate:   0.2185E-03

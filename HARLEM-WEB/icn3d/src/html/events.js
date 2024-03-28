@@ -136,7 +136,7 @@ class Events {
         }
     }
 
-    async loadPdbFile(bAppend) { let me = this.icn3dui, ic = me.icn3d, thisClass = this;
+    async loadPdbFile(bAppend) { let me = this.icn3dui, ic = me.icn3d, thisClass = this; // here_3d_by_pdb_structure.
        let fileId = (bAppend) ? 'pdbfile_app' : 'pdbfile';
 
        //me = ic.setIcn3dui(this.id);

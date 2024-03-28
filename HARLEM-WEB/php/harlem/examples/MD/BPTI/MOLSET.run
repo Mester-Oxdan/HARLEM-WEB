@@ -1,0 +1,2 @@
+#!/bin/sh 
+pmemd -O -i MOLSET.inp -o MOLSET.out -p MOLSET.top -c MOLSET.crd -r MOLSET.rst -ref MOLSET.ref -x MOLSET.mdcrd -v MOLSET.mdvel -e MOLSET.mden 

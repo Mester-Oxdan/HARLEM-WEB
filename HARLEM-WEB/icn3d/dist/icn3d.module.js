@@ -10852,6 +10852,9 @@ class SetMenu {
         html += "</ul>";
         html += "</li>";
 
+        //html += this.getMenuUrl('helpdoc', me.htmlCls.baseUrl + "icn3d/docs/icn3d_help.html", "Download HARLEM" + me.htmlCls.wifiStr, 1, 1);
+        html += this.getMenuUrl('helpdoc', "http://harlemprog.org", "HARLEM Downl." + me.htmlCls.wifiStr, 1, 1);
+        
         html += this.getMenuUrl('helpdoc', me.htmlCls.baseUrl + "icn3d/docs/icn3d_help.html", "Help Doc " + me.htmlCls.wifiStr, 1, 1);
 
         html += this.getMenuSep();

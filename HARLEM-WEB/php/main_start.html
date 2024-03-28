@@ -147,7 +147,7 @@ body{
       grid-template-rows: 1fr 10rem auto;
       grid-template-areas: "main" "." "footer";
       overflow-x: hidden;
-      background: #f5f7fa;
+      background: white;
       min-height: 100vh;
       font-family: "Open Sans", sans-serif;
     }
@@ -192,7 +192,7 @@ body{
     }
     .starting_boble .footer .content a,
     .starting_boble .footer .content p {
-      color: #f5f7fa;
+      color: white;
       text-decoration: none;
     }
     .starting_boble .footer .content b {
@@ -651,27 +651,6 @@ body{
     
   
   </div>
-  
-  <?php
-  
-    // Clear text files
-    unlink('command_output.txt');
-    unlink('select_type_atom.txt');
-    unlink('name_of_project.txt');
-
-    $folderPath = 'all_pdb_files'; // Replace with the actual folder path
-
-    // Get the list of files in the folder
-    $files = glob($folderPath . '/*');
-
-    // Loop through the files and delete them
-    foreach ($files as $file) {
-        if (is_file($file)) {
-            unlink($file); // Delete the file
-        }
-    }
-  
-    ?>
 
 <div class="starting_boble">
     <div class="main" style="background-color: white;"></div>
@@ -808,14 +787,104 @@ body{
       </div>
       <div class="content">
         <div>
-          <div><b>*YouTube: </b><a href="https://www.youtube.com/@Oxdan_products" target="_blank">https://www.youtube.com/@Oxdan_products</a><b style="margin-left: 10px;">*Kwork: </b><a href="https://kwork.com/user/jecob" target="_blank">https://kwork.com/user/jecob</a> </div>
-          <div><b>*Github:</b><a href="https://github.com/Mester-Oxdan" target="_blank">https://github.com/Mester-Oxdan</a><b style="margin-left: 10px;">*Fiverr: </b><a href="https://www.fiverr.com/jecob_567" target="_blank">https://www.fiverr.com/jecob_567</a></div>
-          <div><b>*Tiktok: </b><a href="www.tiktok.com/@oxdan_products." target="_blank">www.tiktok.com/@oxdan_products.</a><b style="margin-left: 10px;">*Website: </b><a href="https://oxdan.com" target="_blank">https://oxdan.com</a></div>
-          <div><b>*Instagram: </b><a href="https://instagram.com/oxdanpraduction" target="_blank">https://instagram.com/oxdanpraduction</a></div>
+          <style>
+            .youtube{
+              background-image: url('resources/images/Youtube_logo.png'); 
+              background-repeat: no-repeat;
+              background-size: contain;
+              width: 10.5%; 
+              height: 10.5%; 
+              position: absolute; 
+              left: 0.6%;
+              top: 16%;
+            }
+            .github{
+              background-image: url('resources/images/github_logo.png'); 
+              background-repeat: no-repeat;
+              background-size: contain;
+              width: 12%; 
+              height: 12%; 
+              position: absolute; 
+              left: 1%;
+              top: 39%;
+            }
+            .tiktok{
+              background-image: url('resources/images/tiktok_logo.png'); 
+              background-repeat: no-repeat;
+              background-size: contain;
+              width: 12%; 
+              height: 12%; 
+              position: absolute; 
+              left: 1%;
+              top: 55%;
+            }
+            .instagram{
+              background-image: url('resources/images/Instagram_logo.png'); 
+              background-repeat: no-repeat;
+              background-size: contain;
+              width: 12%; 
+              height: 12%; 
+              position: absolute; 
+              left: 1%;
+              top: 70%;
+            }
+            .facebook{
+              background-image: url('resources/images/Facebook_logo.png'); 
+              background-repeat: no-repeat;
+              background-size: contain;
+              width: 12%; 
+              height: 12%; 
+              position: absolute; 
+              left: 38%;
+              top: 16%;
+            }
+            .kwork{
+              background-image: url('resources/images/kwork_logo.png'); 
+              background-repeat: no-repeat;
+              background-size: contain;
+              width: 13%; 
+              height: 13%; 
+              position: absolute; 
+              left: 31%;
+              top: 39%;
+            }
+            .fiverr{
+              background-image: url('resources/images/fiverr_logo.png'); 
+              background-repeat: no-repeat;
+              background-size: contain;
+              width: 15%; 
+              height: 15%; 
+              position: absolute; 
+              left: 29.9%;
+              top: 55%;
+            }
+            .oxdan{
+              background-image: url('resources/images/my_dragon_icon_full.jpg'); 
+              background-repeat: no-repeat;
+              background-size: contain;
+              width: 12%; 
+              height: 12%; 
+              position: absolute; 
+              left: 36%;
+              top: 70%;
+            }
+          </style>
+          <div class="youtube"></div>
+          <div class="github"></div>
+          <div class="tiktok"></div>
+          <div class="instagram"></div>
+          <div class="facebook"></div>
+          <div class="kwork"></div>
+          <div class="fiverr"></div>
+          <div class="oxdan"></div>
+          <div style="font-family: 'Comic Sans MS', cursive; margin-left: 1.2%;"><b>Author YouTube: </b><a href="https://www.youtube.com/@Oxdan_Praduction" target="_blank">https://www.youtube.com/@Oxdan_products</a><b style="margin-left: 4.1%;">Author Facebook: </b><a href="https://www.facebook.com/profile.php?id=100087125340188&mibextid=LQQJ4d" target="_blank" >https://www.facebook.com/profile.php?id=100087125340188&mibextid=LQQJ4d</a></div>
+          <div style="font-family: 'Comic Sans MS', cursive; margin-left: 1.2%;"><b>Author Github:</b><a href="https://github.com/Mester-Oxdan" target="_blank">https://github.com/Mester-Oxdan</a><b style="margin-left: 4%;">Author Kwork: </b><a href="https://kwork.com/user/jecob" target="_blank">https://kwork.com/user/jecob</a></div>
+          <div style="font-family: 'Comic Sans MS', cursive; margin-left: 1.2%;"><b>Author Tiktok: </b><a href="www.tiktok.com/@oxdan_praduction" target="_blank">www.tiktok.com/@oxdan_products.</a><b style="margin-left: 3.5%;">Author Fiverr: </b><a href="https://www.fiverr.com/jecob_567" target="_blank">https://www.fiverr.com/jecob_567</a></div>
+          <div style="font-family: 'Comic Sans MS', cursive; margin-left: 1.2%;"><b>Author Instagram: </b><a href="https://instagram.com/oxdanpraduction" target="_blank">https://instagram.com/oxdanpraduction</a><b style="margin-left: 4.1%;">Author Website: </b><a href="https://oxdan.com" target="_blank">https://oxdan.com</a></div>
         </div>
         
         <div><a class="image" href="https://codepen.io/z-" target="_blank" style="background-image: url(&quot;https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/happy.svg&quot;)"></a>
-          <p>©2023 Harlem</p>
+          <p>©2024 Harlem</p>
         </div>
       </div>
     </div>
