@@ -788,86 +788,102 @@ body{
       <div class="content">
         <div>
           <style>
-            .youtube{
-              background-image: url('resources/images/Youtube_logo.png'); 
+            
+            .youtube {
+              background-image: url('resources/images/Youtube_logo.png');
               background-repeat: no-repeat;
               background-size: contain;
-              width: 10.5%; 
-              height: 10.5%; 
-              position: absolute; 
-              left: 0.6%;
-              top: 16%;
-            }
-            .github{
-              background-image: url('resources/images/github_logo.png'); 
-              background-repeat: no-repeat;
-              background-size: contain;
-              width: 12%; 
-              height: 12%; 
-              position: absolute; 
-              left: 1%;
-              top: 39%;
-            }
-            .tiktok{
-              background-image: url('resources/images/tiktok_logo.png'); 
-              background-repeat: no-repeat;
-              background-size: contain;
-              width: 12%; 
-              height: 12%; 
-              position: absolute; 
-              left: 1%;
-              top: 55%;
-            }
-            .instagram{
-              background-image: url('resources/images/Instagram_logo.png'); 
-              background-repeat: no-repeat;
-              background-size: contain;
-              width: 12%; 
-              height: 12%; 
-              position: absolute; 
-              left: 1%;
-              top: 70%;
-            }
-            .facebook{
-              background-image: url('resources/images/Facebook_logo.png'); 
-              background-repeat: no-repeat;
-              background-size: contain;
-              width: 12%; 
-              height: 12%; 
-              position: absolute; 
-              left: 38%;
-              top: 16%;
-            }
+              width: 3.8vh; /* 10.5% of 14.4vh */
+              height: 3.8vh; /* 10.5% of 14.4vh */
+              position: absolute;
+              left: 1.7vh; /* 0.6% of 69.44vh */
+              top: 5.5vh; /* 16% of 50vh */
+          }
+          .github {
+            background-image: url('resources/images/github_logo.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 3.8vh; /* Adjusted width for landscape */
+            height: 3.8vh; /* Adjusted height for landscape */
+            position: absolute;
+            left: 1.7vh; /* Adjusted left position for landscape */
+            top: 10.5vh; /* Adjusted top position for landscape */
+        }
+    
+        .tiktok {
+            background-image: url('resources/images/tiktok_logo.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 3.8vh; /* Adjusted width for landscape */
+            height: 3.8vh; /* Adjusted height for landscape */
+            position: absolute;
+            left: 1.7vh; /* Adjusted left position for landscape */
+            top: 15.2vh; /* Adjusted top position for landscape */
+        }
+    
+        .instagram {
+            background-image: url('resources/images/Instagram_logo.png');
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 3.8vh; /* Adjusted width for landscape */
+            height: 3.8vh; /* Adjusted height for landscape */
+            position: absolute;
+            left: 1.7vh; /* Adjusted left position for landscape */
+            top: 19.8vh; /* Adjusted top position for landscape */
+        }
+        .facebook {
+          background-image: url('resources/images/Facebook_logo.png');
+          background-repeat: no-repeat;
+          background-size: contain;
+          width: 3.6vh; /* Adjusted width for landscape */
+          height: 3.6vh; /* Adjusted height for landscape */
+          position: absolute;
+          left: 78vh; /* Adjusted left position for landscape */
+          top: 5vh; /* Adjusted top position for landscape */
+      }
             .kwork{
               background-image: url('resources/images/kwork_logo.png'); 
               background-repeat: no-repeat;
               background-size: contain;
-              width: 13%; 
-              height: 13%; 
-              position: absolute; 
-              left: 31%;
-              top: 39%;
+              width: 4vh; /* Adjusted width for landscape */
+              height: 4vh; /* Adjusted height for landscape */
+              position: absolute;
+              left: 64.5vh; /* Adjusted left position for landscape */
+              top: 10.5vh; /* Adjusted top position for landscape */
             }
             .fiverr{
               background-image: url('resources/images/fiverr_logo.png'); 
               background-repeat: no-repeat;
               background-size: contain;
-              width: 15%; 
-              height: 15%; 
-              position: absolute; 
-              left: 29.9%;
-              top: 55%;
+              width: 8.7vh; /* Adjusted width for landscape */
+          height: 8.7vh; /* Adjusted height for landscape */
+          position: absolute;
+          left: 62.5vh; /* Adjusted left position for landscape */
+          top: 15.2vh; /* Adjusted top position for landscape */
             }
             .oxdan{
               background-image: url('resources/images/my_dragon_icon_full.jpg'); 
               background-repeat: no-repeat;
               background-size: contain;
-              width: 12%; 
-              height: 12%; 
-              position: absolute; 
-              left: 36%;
-              top: 70%;
+              width: 3.8vh; /* Adjusted width for landscape */
+              height: 3.8vh; /* Adjusted height for landscape */
+              position: absolute;
+              left: 74.5vh; /* Adjusted left position for landscape */
+              top: 19.8vh; /* Adjusted top position for landscape */
             }
+
+            .author-info {
+              font-family: 'Comic Sans MS', cursive;
+              position: absolute;
+              font-size: 2.3vh; /* Adjust font size using vh */
+              left: 3.1vw; /* Adjust left position using vw */
+              top: 5vh; /* Adjust top position using vh */
+          }
+  
+          /* Add margin-left using viewport units for better responsiveness */
+          .author-info a {
+              margin-left: 0.1vw; /* Adjust left margin using vw */
+          }
           </style>
           <div class="youtube"></div>
           <div class="github"></div>
@@ -877,10 +893,24 @@ body{
           <div class="kwork"></div>
           <div class="fiverr"></div>
           <div class="oxdan"></div>
-          <div style="font-family: 'Comic Sans MS', cursive; margin-left: 1.2%;"><b>Author YouTube: </b><a href="https://www.youtube.com/@Oxdan_Praduction" target="_blank">https://www.youtube.com/@Oxdan_products</a><b style="margin-left: 4.1%;">Author Facebook: </b><a href="https://www.facebook.com/profile.php?id=100087125340188&mibextid=LQQJ4d" target="_blank" >https://www.facebook.com/profile.php?id=100087125340188&mibextid=LQQJ4d</a></div>
-          <div style="font-family: 'Comic Sans MS', cursive; margin-left: 1.2%;"><b>Author Github:</b><a href="https://github.com/Mester-Oxdan" target="_blank">https://github.com/Mester-Oxdan</a><b style="margin-left: 4%;">Author Kwork: </b><a href="https://kwork.com/user/jecob" target="_blank">https://kwork.com/user/jecob</a></div>
-          <div style="font-family: 'Comic Sans MS', cursive; margin-left: 1.2%;"><b>Author Tiktok: </b><a href="www.tiktok.com/@oxdan_praduction" target="_blank">www.tiktok.com/@oxdan_products.</a><b style="margin-left: 3.5%;">Author Fiverr: </b><a href="https://www.fiverr.com/jecob_567" target="_blank">https://www.fiverr.com/jecob_567</a></div>
-          <div style="font-family: 'Comic Sans MS', cursive; margin-left: 1.2%;"><b>Author Instagram: </b><a href="https://instagram.com/oxdanpraduction" target="_blank">https://instagram.com/oxdanpraduction</a><b style="margin-left: 4.1%;">Author Website: </b><a href="https://oxdan.com" target="_blank">https://oxdan.com</a></div>
+          
+          <!-- Author information -->
+          <div class="author-info">
+            <b>Author YouTube:</b> <a href="https://www.youtube.com/@Oxdan_Praduction" target="_blank">https://www.youtube.com/@Oxdan_products</a>
+            <b style="margin-left: 3.1vw;">Author Facebook:</b> <a href="https://www.facebook.com/profile.php?id=100087125340188&mibextid=LQQJ4d" target="_blank">https://www.facebook.com/profile.php?id=100087125340188&mibextid=LQQJ4d</a>
+          </div>
+          <div class="author-info" style="top: 10vh;">
+              <b>Author Github:</b> <a href="https://github.com/Mester-Oxdan" target="_blank">https://github.com/Mester-Oxdan</a>
+              <b style="margin-left: 3.1vw;">Author Kwork:</b> <a href="https://kwork.com/user/jecob" target="_blank">https://kwork.com/user/jecob</a>
+          </div>
+          <div class="author-info" style="top: 15vh;">
+              <b>Author Tiktok:</b> <a href="www.tiktok.com/@oxdan_praduction" target="_blank">www.tiktok.com/@oxdan_products</a>
+              <b style="margin-left: 3.1vw;">Author Fiverr:</b> <a href="https://www.fiverr.com/jecob_567" target="_blank">https://www.fiverr.com/jecob_567</a>
+          </div>
+          <div class="author-info" style="top: 20vh;">
+              <b>Author Instagram:</b> <a href="https://instagram.com/oxdanpraduction" target="_blank">https://instagram.com/oxdanpraduction</a>
+              <b style="margin-left: 3.1vw;">Author Website:</b> <a href="https://oxdan.com" target="_blank">https://oxdan.com</a>
+          </div>
         </div>
         
         <div><a class="image" href="https://codepen.io/z-" target="_blank" style="background-image: url(&quot;https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/happy.svg&quot;)"></a>
