@@ -793,89 +793,90 @@ body{
               background-image: url('resources/images/Youtube_logo.png');
               background-repeat: no-repeat;
               background-size: contain;
-              width: 3.8vh; /* 10.5% of 14.4vh */
-              height: 3.8vh; /* 10.5% of 14.4vh */
+              width: min(2vw, 3.8vh); /* Adjusted width for landscape */
+              height: min(2vw, 3.8vh); /* Adjusted height for landscape */
               position: absolute;
-              left: 1.7vh; /* 0.6% of 69.44vh */
-              top: 5.5vh; /* 16% of 50vh */
+              left: 0.85vw; /* 0.6% of 69.44vh */
+              top: 4.5vh; /* 16% of 50vh */
           }
           .github {
             background-image: url('resources/images/github_logo.png');
             background-repeat: no-repeat;
             background-size: contain;
-            width: 3.8vh; /* Adjusted width for landscape */
-            height: 3.8vh; /* Adjusted height for landscape */
+            width: min(2vw, 3.8vh); /* Adjusted width for landscape */
+            height: min(2vw, 3.8vh); /* Adjusted height for landscape */
             position: absolute;
-            left: 1.7vh; /* Adjusted left position for landscape */
-            top: 10.5vh; /* Adjusted top position for landscape */
+            left: 0.85vw; /* Adjusted left position for landscape */
+            top: 9.5vh; /* Adjusted top position for landscape */
         }
     
         .tiktok {
             background-image: url('resources/images/tiktok_logo.png');
             background-repeat: no-repeat;
             background-size: contain;
-            width: 3.8vh; /* Adjusted width for landscape */
-            height: 3.8vh; /* Adjusted height for landscape */
+            width: min(2vw, 3.8vh); /* Adjusted width for landscape */
+            height: min(2vw, 3.8vh); /* Adjusted height for landscape */
             position: absolute;
-            left: 1.7vh; /* Adjusted left position for landscape */
-            top: 15.2vh; /* Adjusted top position for landscape */
+            left: 0.85vw; /* Adjusted left position for landscape */
+            top: 14.5vh; /* Adjusted top position for landscape */
         }
     
         .instagram {
             background-image: url('resources/images/Instagram_logo.png');
             background-repeat: no-repeat;
             background-size: contain;
-            width: 3.8vh; /* Adjusted width for landscape */
-            height: 3.8vh; /* Adjusted height for landscape */
+            width: min(2vw, 3.8vh); /* Adjusted width for landscape */
+            height: min(2vw, 3.8vh); /* Adjusted height for landscape */
             position: absolute;
-            left: 1.7vh; /* Adjusted left position for landscape */
+            left: 0.85vw; /* Adjusted left position for landscape */
             top: 19.8vh; /* Adjusted top position for landscape */
         }
         .facebook {
           background-image: url('resources/images/Facebook_logo.png');
           background-repeat: no-repeat;
           background-size: contain;
-          width: 3.6vh; /* Adjusted width for landscape */
-          height: 3.6vh; /* Adjusted height for landscape */
+          width: min(2vw, 3.8vh); /* Adjusted width for landscape */
+          height: min(2vw, 3.8vh); /* Adjusted height for landscape */
           position: absolute;
-          left: 78vh; /* Adjusted left position for landscape */
-          top: 5vh; /* Adjusted top position for landscape */
+          left: 37.5vw; /* Adjusted left position for landscape */
+          top: 4vh; /* Adjusted top position for landscape */
       }
             .kwork{
               background-image: url('resources/images/kwork_logo.png'); 
               background-repeat: no-repeat;
               background-size: contain;
-              width: 4vh; /* Adjusted width for landscape */
-              height: 4vh; /* Adjusted height for landscape */
+              width: min(2.25vw, 4.5vh); /* Adjusted width for landscape */
+              height: min(2.25vw, 4.5vh); /* Adjusted height for landscape */
               position: absolute;
-              left: 64.5vh; /* Adjusted left position for landscape */
-              top: 10.5vh; /* Adjusted top position for landscape */
+              left: 30.25vw; /* Adjusted left position for landscape */
+              top: 9.4vh; /* Adjusted top position for landscape */
             }
             .fiverr{
               background-image: url('resources/images/fiverr_logo.png'); 
               background-repeat: no-repeat;
               background-size: contain;
-              width: 8.7vh; /* Adjusted width for landscape */
-          height: 8.7vh; /* Adjusted height for landscape */
-          position: absolute;
-          left: 62.5vh; /* Adjusted left position for landscape */
-          top: 15.2vh; /* Adjusted top position for landscape */
+              width: min(4.9vw, 9.8vh); /* Adjusted width for landscape */
+              height: min(4.9vw, 9.8vh); /* Adjusted height for landscape */
+              position: absolute;
+              left: 29.6vw; /* Adjusted left position for landscape 59.5vh*/
+              top: 14.1vh; /* Adjusted top position for landscape */
             }
             .oxdan{
               background-image: url('resources/images/my_dragon_icon_full.jpg'); 
               background-repeat: no-repeat;
               background-size: contain;
-              width: 3.8vh; /* Adjusted width for landscape */
-              height: 3.8vh; /* Adjusted height for landscape */
+              width: min(2vw, 3.8vh); /* Adjusted width for landscape */
+              height: min(2vw, 3.8vh); /* Adjusted height for landscape */
               position: absolute;
-              left: 74.5vh; /* Adjusted left position for landscape */
+              left: 35.2vw; /* Adjusted left position for landscape */
               top: 19.8vh; /* Adjusted top position for landscape */
             }
 
             .author-info {
-              font-family: 'Comic Sans MS', cursive;
+              font-family: Arial, sans-serif;
               position: absolute;
-              font-size: 2.3vh; /* Adjust font size using vh */
+              /*font-size: 1.15vw; /* Adjust font size using vh */
+              font-size: min(2.3vh, 1.15vw);
               left: 3.1vw; /* Adjust left position using vw */
               top: 5vh; /* Adjust top position using vh */
           }
@@ -913,7 +914,7 @@ body{
           </div>
         </div>
         
-        <div><a class="image" href="https://codepen.io/z-" target="_blank" style="background-image: url(&quot;https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/happy.svg&quot;)"></a>
+        <div><a class="image" href="https://codepen.io/z-" target="_blank" style="background-image: url(&quot;https://s3-us-west-2.amazonaws.com/s.cdpn.io/199011/happy.svg&quot;); font-family: Arial, sans-serif;"></a>
           <p>©2024 Harlem</p>
         </div>
       </div>
