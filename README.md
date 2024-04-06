@@ -10,7 +10,7 @@ PLEASE READ ME FIRST!!!!!!!
 *For social media: ⤵️
 *YouTube: @Oxdan_Praduction /OR/ https://www.youtube.com/@Oxdan_Praduction
 
-*Github: @Mester-Oxdan /OR/ [https://github.com/Mester-Oxdan]([https://github.com/Mester-Oxdan]){:target="_blank"}
+*Github: @Mester-Oxdan /OR/ [https://github.com/Mester-Oxdan](https://github.com/Mester-Oxdan){:target="_blank"}
 
 *Tiktok: @oxdan_praduction /OR/ www.tiktok.com/@oxdan_praduction
 
