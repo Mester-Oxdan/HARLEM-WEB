@@ -54,6 +54,7 @@ Photos 2024:
 Harlem:
 
 Start.
+
 ![Harlem_start](https://github.com/Mester-Oxdan/HARLEM-WEB/assets/106891875/e1eb8ba4-d64e-455b-bf02-ef55f9cac227)
 
 Harlem-Web:
