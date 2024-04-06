@@ -10,8 +10,9 @@ PLEASE READ ME FIRST!!!!!!!
 *For social media: ⤵️
 *YouTube: @Oxdan_Praduction /OR/ https://www.youtube.com/@Oxdan_Praduction
 
-*Github: @Mester-Oxdan /OR/ [Link Text]((https://github.com/Mester-Oxdan)){:target="_blank"}
-[Stackoverflow The Key](https://stackoverflow.blog/2021/03/31/the-key-copy-paste/){:target="_blank" rel="noopener"}
+*Github: @Mester-Oxdan /OR/ https://github.com/Mester-Oxdan
+
+<a href="https://www.google.com" target="_blank">external link</a>
 
 *Tiktok: @oxdan_praduction /OR/ www.tiktok.com/@oxdan_praduction
 
