@@ -1,7 +1,7 @@
 # HARLEM-WEB
 WEB INTERFACE TO HARLEM.
 
-HARLEM: Program for scientists about 3d molecular display and other science functions which you need.
+HARLEM: It's program for scientists about 3d molecular display and other science functions which you might need.
 
 HARLEM-WEB: Web interface to harlem.
 
@@ -40,7 +40,9 @@ PLEASE READ ME FIRST!!!!!!!
 
 *Thanks: 🙏😊
 
-(About/Main info):
+(About):
+
+
 
 Photos 2024:
 
