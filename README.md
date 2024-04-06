@@ -11,6 +11,7 @@ PLEASE READ ME FIRST!!!!!!!
 *YouTube: @Oxdan_Praduction /OR/ https://www.youtube.com/@Oxdan_Praduction
 
 *Github: @Mester-Oxdan /OR/ [Link Text]((https://github.com/Mester-Oxdan)){:target="_blank"}
+[Stackoverflow The Key](https://stackoverflow.blog/2021/03/31/the-key-copy-paste/){:target="_blank" rel="noopener"}
 
 *Tiktok: @oxdan_praduction /OR/ www.tiktok.com/@oxdan_praduction
 
