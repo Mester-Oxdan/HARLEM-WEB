@@ -15,7 +15,7 @@ PLEASE READ ME FIRST!!!!!!!
 
 *Github: @Mester-Oxdan /OR/ https://github.com/Mester-Oxdan
 
-*Tiktok: @oxdan_praduction /OR/ www.tiktok.com/@oxdan_praduction
+*Tiktok: @oxdan_praduction /OR/ https://www.tiktok.com/@oxdan_praduction
 
 *Instagram: @oxdanpraduction /OR/ https://instagram.com/oxdanpraduction
 
@@ -29,17 +29,17 @@ PLEASE READ ME FIRST!!!!!!!
 
 *Reddit: https://www.reddit.com/u/detektive-void/s/JyYykvbe9o
 
-
 *For Sponsoring/Donations: ⤵️
 
 *Cash App: $BoHladii /OR/ 4403 9352 3234 1307
 
 *Buy Me A Coffee: https://www.buymeacoffee.com/oxdan
 
-*Ebay: https://www.ebay.com/usr/oxdan_praduction
+*For Shops: ⤵️
 
 *Etsy: https://oxdanpraduction3dart.etsy.com
 
+*Tik Tok Shop: @oxdan_praduction_shop /OR/ https://www.tiktok.com/@oxdan_praduction_shop?_t=8p4TNukKU4w&_r=1
 
 *For Other: ⤵️
 
