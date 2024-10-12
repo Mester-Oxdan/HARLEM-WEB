@@ -29,6 +29,8 @@ PLEASE READ ME FIRST!!!!!!!
 
 *Reddit: https://www.reddit.com/u/detektive-void/s/JyYykvbe9o
 
+*Thingiverse: https://www.thingiverse.com/oxdan_praduction/designs
+
 *For Sponsoring/Donations: ⤵️
 
 *Cash App: $BoHladii /OR/ 4403 9352 3234 1307
@@ -40,6 +42,10 @@ PLEASE READ ME FIRST!!!!!!!
 *Etsy: https://oxdanpraduction3dart.etsy.com
 
 *Tik Tok Shop: @oxdan_praduction_shop /OR/ https://www.tiktok.com/@oxdan_praduction_shop?_t=8p4TNukKU4w&_r=1
+
+*Facebook Shop: https://www.facebook.com/profile.php?id=61558180556782&mibextid=kFxxJD
+
+*Shopify: https://933791-66.myshopify.com/
 
 *For Other: ⤵️
 
