@@ -13,21 +13,13 @@ PLEASE READ ME FIRST!!!!!!!
 
 *YouTube: @Oxdan_Praduction /OR/ https://www.youtube.com/@Oxdan_Praduction
 
-*Github: @Mester-Oxdan /OR/ https://github.com/Mester-Oxdan
-
 *Tiktok: @oxdan_praduction /OR/ https://www.tiktok.com/@oxdan_praduction
 
 *Instagram: @oxdanpraduction /OR/ https://instagram.com/oxdanpraduction
 
 *Facebook: @Mariia Sierova /OR/ https://www.facebook.com/profile.php?id=100087125340188&mibextid=LQQJ4d
 
-*Kwork: @jecob /OR/ https://kwork.com/user/jecob
-
-*Fiverr: @jecob_567 /OR/ https://www.fiverr.com/jecob_567
-
-*Upwork: https://www.upwork.com/freelancers/~01e296384cd379e73e?viewMode=1&mp_source=share
-
-*Reddit: https://www.reddit.com/u/detektive-void/s/JyYykvbe9o
+*Github: @Mester-Oxdan /OR/ https://github.com/Mester-Oxdan
 
 *Thingiverse: https://www.thingiverse.com/oxdan_praduction/designs
 
@@ -41,7 +33,7 @@ PLEASE READ ME FIRST!!!!!!!
 
 *Etsy: https://oxdanpraduction3dart.etsy.com
 
-*Tik Tok Shop: @oxdan_praduction_shop /OR/ https://www.tiktok.com/@oxdan_praduction_shop?_t=8p4TNukKU4w&_r=1
+*TikTok Shop: @oxdan_praduction_shop /OR/ https://www.tiktok.com/@oxdan_praduction_shop?_t=8p4TNukKU4w&_r=1
 
 *Facebook Shop: https://www.facebook.com/profile.php?id=61558180556782&mibextid=kFxxJD
 
