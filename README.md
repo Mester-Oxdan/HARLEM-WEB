@@ -33,8 +33,6 @@ PLEASE READ ME FIRST!!!!!!!
 
 <b>*For Shops: ⤵️</b>
 
-*Etsy: https://oxdanpraduction3dart.etsy.com
-
 *TikTok Shop: @oxdan_praduction_shop /OR/ https://www.tiktok.com/@oxdan_praduction_shop?_t=8p4TNukKU4w&_r=1
 
 *Facebook Shop: https://www.facebook.com/profile.php?id=61558180556782&mibextid=kFxxJD
